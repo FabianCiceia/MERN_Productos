@@ -17,14 +17,12 @@ const Manager = () => {
         axios
         .post(`${baseURL}`, pront)
         .then((response) => {
-            console.log(response.data);
             Swal.fire({
                 icon: "success",
-                title: `${response.data.title} fue agregado`,
+                title: `${response.data.product.title} fue agregado`,
             });
         })
         .catch(err => {
-            console.log(err);
             Swal.fire({
                 icon: "error",
                 title: `${err.response.data.error.message}`,
@@ -39,10 +37,9 @@ const Manager = () => {
         price: '',
         description: '',
     };
-    const onSubmit = (values) => {
-        console.log(values);
+    const onSubmit = (values,  { resetForm }) => {
+        resetForm();
         updatePost(values);
-
     };
     const validationSchema = Yup.object({
         title: Yup.string().required(),
@@ -60,7 +57,7 @@ const Manager = () => {
         validationSchema={validationSchema}
         >   
             
-            <Form>
+            <Form className="containerForm">
                 <div className='form'>
                     <label className='form-label' htmlFor="title">Title:</label>
                     <Field type="text" id="title" name="title" />

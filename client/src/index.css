@@ -1,10 +1,27 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
-body{
+.containerManager {
     display: flex;
     justify-content: center;
-    margin-top: 5%;
+    margin: 5% 10%;
 }
 
+
+@media (max-width: 1250px) {
+    .containerManager {
+        flex-direction: column;
+    }
+    .List{
+        margin-top: 20px;
+    }
+}
+@media (min-width: 1250px) {
+    body{
+        zoom: 1.2;
+    }
+    .List{
+        margin-left: 40px;
+    }
+}

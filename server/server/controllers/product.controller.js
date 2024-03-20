@@ -1,5 +1,17 @@
 const Product = require("../models/product.model");
 
+module.exports.findAllProductTitles = (req, res) => {
+  Product.find({}, '_id title')
+    .then(allProducts => {
+      const formattedProducts = allProducts.map(product => ({
+        id: product._id,
+        title: product.title
+      }));
+      res.json({ products: formattedProducts });
+    })
+    .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
+
 module.exports.findAllProducts = (req, res) => {
   Product.find()
     .then(allDaProducts => res.json({ products: allDaProducts }))
