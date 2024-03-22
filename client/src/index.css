@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-.containerManager {
+.containerform {
     display: flex;
     justify-content: center;
     margin: 5% 10%;
@@ -10,7 +10,7 @@
 
 
 @media (max-width: 1250px) {
-    .containerManager {
+    .containerform {
         flex-direction: column;
     }
     .List{

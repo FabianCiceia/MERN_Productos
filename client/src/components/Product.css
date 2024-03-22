@@ -1,0 +1,31 @@
+.product {
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #007bff;
+}
+
+.product-description {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
